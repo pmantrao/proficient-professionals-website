@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Proficient Professionals Inc.</title>
+    <meta name="description" content="Get in touch with Proficient Professionals for fractional CTO services. Schedule a free consultation today.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+<nav>
+    <div class="nav-container">
+        <a href="index.html" class="logo">
+            <img src="logo.svg" alt="Proficient Professionals" style="height: 50px; display: block;">
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="why-partner.html">Why Partner with Us</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle">Who We Help</a>
+                <ul class="dropdown-menu">
+                    <li><a href="founders.html">Founders & Startup Teams</a></li>
+                    <li><a href="investors.html">Investors & Advisors</a></li>
+                </ul>
+            </li>
+            <li><a href="engagement.html">Engagement Model</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html" class="cta-btn">Contact</a></li>
+        </ul>
+        <div class="mobile-menu-toggle" id="mobileMenuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</nav>
+
+
+    <!-- Page Header -->
+    <section class="hero" style="padding: 4rem 2rem;">
+        <div class="hero-content">
+            <h1>Let's Discuss Your Technology Challenges</h1>
+            <p>Schedule a free 30-minute consultation—no obligation, just expert insights</p>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section>
+        <div class="container">
+            <div class="contact-form">
+                <div id="formMessage" class="form-message"></div>
+                
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="stage">Current Stage</label>
+                        <select id="stage" name="stage">
+                            <option value="">Select...</option>
+                            <option value="pre-seed">Pre-seed / Idea Stage</option>
+                            <option value="seed">Seed Funded</option>
+                            <option value="series-a">Series A</option>
+                            <option value="series-b">Series B+</option>
+                            <option value="established">Established Company</option>
+                            <option value="investor">Investor/Advisor</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="challenge">Primary Challenge *</label>
+                        <select id="challenge" name="challenge" required>
+                            <option value="">Select...</option>
+                            <option value="cto-leadership">Need CTO-level leadership</option>
+                            <option value="strategy">Technology strategy & roadmap</option>
+                            <option value="team">Team building & hiring</option>
+                            <option value="architecture">Architecture & modernization</option>
+                            <option value="ai-ml">AI/ML implementation</option>
+                            <option value="compliance">Compliance (SOC2, HIPAA, etc.)</option>
+                            <option value="ma">M&A due diligence</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required placeholder="Tell us about your technology challenges and goals..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submitBtn">Send Message</button>
+                </form>
+
+                <p style="text-align: center; margin-top: 2rem; color: var(--light-text); font-size: 0.9rem;">
+                    We typically respond within 24 hours during business days
+                </p>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <div class="contact-info-item">
+                    <h3>📧 Email</h3>
+                    <a href="mailto:prishant@proficient-professionals.com">prishant@proficient-professionals.com</a>
+                </div>
+                <div class="contact-info-item">
+                    <h3>💼 LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/prishant-mantrao/" target="_blank">Connect with Prishant</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Happens Next -->
+    <section style="background: var(--gray);">
+        <div class="container">
+            <h2 class="section-title">What Happens Next?</h2>
+            <div class="value-grid">
+                <div class="value-card">
+                    <div class="value-icon">1️⃣</div>
+                    <h3>We'll Review Your Inquiry</h3>
+                    <p>Within 24 hours (usually much faster), we'll review your message and understand your needs.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">2️⃣</div>
+                    <h3>Schedule a Consultation</h3>
+                    <p>We'll schedule a free 30-minute call to discuss your challenges and explore how we can help.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">3️⃣</div>
+                    <h3>Receive a Custom Proposal</h3>
+                    <p>If there's a fit, you'll receive a tailored proposal outlining our approach and engagement options.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Proficient Professionals Inc.</h3>
+            <p style="color: rgba(255,255,255,0.8); margin-top: 1rem;">Strategic Technology Leadership on Demand</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="why-partner.html">Why Partner with Us</a></li>
+                <li><a href="engagement.html">Engagement Model</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Who We Help</h3>
+            <ul>
+                <li><a href="founders.html">Founders & Startup Teams</a></li>
+                <li><a href="investors.html">Investors & Advisors</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contact</h3>
+            <ul>
+                <li><a href="mailto:prishant@proficient-professionals.com">prishant@proficient-professionals.com</a></li>
+                <li><a href="https://www.linkedin.com/in/prishant-mantrao/" target="_blank">LinkedIn</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Proficient Professionals Inc. All rights reserved.</p>
+    </div>
+</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
