@@ -248,16 +248,27 @@ section {
     border-radius: 10px;
     box-shadow: 0 3px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s;
+    border-left: 4px solid var(--primary);
 }
 
 .value-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    border-left-color: var(--secondary);
 }
 
 .value-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .value-card h3 {
@@ -280,6 +291,20 @@ section {
     border-radius: 10px;
     padding: 2rem;
     transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--primary);
+    transform: scaleY(0);
+    transition: transform 0.3s;
 }
 
 .service-card:hover {
@@ -287,9 +312,22 @@ section {
     box-shadow: 0 5px 20px rgba(0,102,204,0.1);
 }
 
+.service-card:hover::before {
+    transform: scaleY(1);
+}
+
 .service-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .service-card h3 {
@@ -323,12 +361,33 @@ section {
     border-radius: 10px;
     box-shadow: 0 3px 15px rgba(0,0,0,0.1);
     margin-bottom: 3rem;
+    border-left: 4px solid var(--primary);
+}
+
+.service-detail .service-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.service-detail h2 {
+    color: var(--dark);
+    margin-bottom: 1rem;
 }
 
 .service-detail h3 {
     color: var(--primary);
     margin-bottom: 1.5rem;
     font-size: 1.3rem;
+    margin-top: 2rem;
 }
 
 .service-detail ul {
