@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Proficient Professionals Inc.</title>
     <meta name="description" content="Get in touch with Proficient Professionals for fractional CTO services. Schedule a free consultation today.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -47,8 +48,8 @@
     </section>
 
     <!-- Contact Form Section -->
-    <section>
-         <div class="container">
+   <section>
+        <div class="container">
             <div class="contact-form">
                 <div id="formMessage" class="form-message"></div>
                 
@@ -110,51 +111,70 @@
                 </form>
 
                 <script>
-                function handleFormSubmit(event) {
-                    event.preventDefault();
+                // Formspree AJAX submission to prevent redirect
+                const form = document.getElementById('contactForm');
+                const formMessage = document.getElementById('formMessage');
+                const submitBtn = document.getElementById('submitBtn');
+
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
                     
-                    const name = document.getElementById('name').value;
-                    const email = document.getElementById('email').value;
-                    const company = document.getElementById('company').value;
-                    const phone = document.getElementById('phone').value;
-                    const stage = document.getElementById('stage').value;
-                    const challenge = document.getElementById('challenge').value;
-                    const message = document.getElementById('message').value;
+                    // Disable button and show loading
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Sending...';
                     
-                    // Create email content
-                    const subject = encodeURIComponent('New Contact Form Submission from ' + name);
-                    const body = encodeURIComponent(
-                        'New contact form submission:\n\n' +
-                        'Name: ' + name + '\n' +
-                        'Email: ' + email + '\n' +
-                        'Company: ' + (company || 'Not provided') + '\n' +
-                        'Phone: ' + (phone || 'Not provided') + '\n' +
-                        'Stage: ' + (stage || 'Not selected') + '\n' +
-                        'Primary Challenge: ' + challenge + '\n\n' +
-                        'Message:\n' + message + '\n\n' +
-                        'Submitted: ' + new Date().toLocaleString()
-                    );
+                    // Get form data
+                    const formData = new FormData(form);
                     
-                    // Show success message
-                    const formMessage = document.getElementById('formMessage');
-                    formMessage.className = 'form-message success';
-                    formMessage.textContent = 'Thank you! Opening your email client now. Please send the pre-filled email to complete your inquiry.';
-                    
-                    // Open email client
-                    window.location.href = 'mailto:prishant@proficient-professionals.com?subject=' + subject + '&body=' + body;
-                    
-                    // Reset form
-                    document.getElementById('contactForm').reset();
-                    
-                    return false;
-                }
+                    // Submit to Formspree via AJAX
+                    fetch(form.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            // Success!
+                            formMessage.className = 'form-message success';
+                            formMessage.textContent = '✓ Thank you for your message! We\'ll contact you within 24 hours.';
+                            form.reset();
+                            
+                            // Re-enable button
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = 'Send Message';
+                            
+                            // Hide message after 10 seconds
+                            setTimeout(() => {
+                                formMessage.className = 'form-message';
+                                formMessage.textContent = '';
+                            }, 10000);
+                        } else {
+                            // Error from Formspree
+                            return response.json().then(data => {
+                                throw new Error(data.error || 'Form submission failed');
+                            });
+                        }
+                    })
+                    .catch(error => {
+                        // Show error message
+                        formMessage.className = 'form-message error';
+                        formMessage.textContent = 'Oops! There was a problem submitting your form. Please try again or email us directly at prishant@proficient-professionals.com';
+                        
+                        // Re-enable button
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Send Message';
+                        
+                        console.error('Form submission error:', error);
+                    });
+                });
                 </script>
 
                 <p style="text-align: center; margin-top: 2rem; color: var(--light-text); font-size: 0.9rem;">
                     We typically respond within 24 hours during business days
                 </p>
             </div>
-
 
             <!-- Contact Information -->
             <div class="contact-info">
