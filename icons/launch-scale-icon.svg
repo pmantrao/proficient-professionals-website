@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+  <style>
+    .primary{fill:#2563eb}
+    .secondary{fill:#93c5fd;opacity:0.4}
+  </style>
+  <circle class="secondary" cx="40" cy="40" r="35"/>
+  
+  <path class="primary" d="M40 15 C35 25 35 40 35 50 L45 50 C45 40 45 25 40 15 Z" />
+  <path class="primary" d="M35 42 L30 50 L35 50 Z M45 42 L50 50 L45 50 Z" />
+  <rect class="primary" x="32" y="55" width="4" height="10" rx="1" />
+  <rect class="primary" x="38" y="52" width="4" height="13" rx="1" />
+  <rect class="primary" x="44" y="58" width="4" height="7" rx="1" />
+  
+  <line class="secondary" x1="25" y1="30" x2="30" y2="30" stroke="#93c5fd" stroke-width="2" stroke-linecap="round" />
+  <line class="secondary" x1="50" y1="35" x2="55" y2="35" stroke="#93c5fd" stroke-width="2" stroke-linecap="round" />
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+  <style>
+    .primary{fill:#2563eb}
+    .secondary{fill:#93c5fd;opacity:0.4}
+  </style>
+  <circle class="secondary" cx="40" cy="40" r="35"/>
+  <path class="primary" d="M25 50 A18 18 0 1 1 55 50" fill="none" stroke="#2563eb" stroke-width="4" stroke-linecap="round"/>
+  <path class="primary" d="M40 45 L50 30" stroke="#2563eb" stroke-width="3" stroke-linecap="round"/>
+  <circle class="primary" cx="40" cy="45" r="3"/>
+  <circle class="secondary" cx="58" cy="45" r="3"/>
+  <circle class="secondary" cx="22" cy="45" r="3"/>
+</svg>
