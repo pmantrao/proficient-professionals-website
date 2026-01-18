@@ -48,11 +48,11 @@
 
     <!-- Contact Form Section -->
     <section>
-        <div class="container">
+         <div class="container">
             <div class="contact-form">
                 <div id="formMessage" class="form-message"></div>
                 
-                <form id="contactForm">
+                <form id="contactForm" onsubmit="return handleFormSubmit(event)">
                     <div class="form-group">
                         <label for="name">Full Name *</label>
                         <input type="text" id="name" name="name" required>
@@ -109,10 +109,52 @@
                     <button type="submit" class="submit-btn" id="submitBtn">Send Message</button>
                 </form>
 
+                <script>
+                function handleFormSubmit(event) {
+                    event.preventDefault();
+                    
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const company = document.getElementById('company').value;
+                    const phone = document.getElementById('phone').value;
+                    const stage = document.getElementById('stage').value;
+                    const challenge = document.getElementById('challenge').value;
+                    const message = document.getElementById('message').value;
+                    
+                    // Create email content
+                    const subject = encodeURIComponent('New Contact Form Submission from ' + name);
+                    const body = encodeURIComponent(
+                        'New contact form submission:\n\n' +
+                        'Name: ' + name + '\n' +
+                        'Email: ' + email + '\n' +
+                        'Company: ' + (company || 'Not provided') + '\n' +
+                        'Phone: ' + (phone || 'Not provided') + '\n' +
+                        'Stage: ' + (stage || 'Not selected') + '\n' +
+                        'Primary Challenge: ' + challenge + '\n\n' +
+                        'Message:\n' + message + '\n\n' +
+                        'Submitted: ' + new Date().toLocaleString()
+                    );
+                    
+                    // Show success message
+                    const formMessage = document.getElementById('formMessage');
+                    formMessage.className = 'form-message success';
+                    formMessage.textContent = 'Thank you! Opening your email client now. Please send the pre-filled email to complete your inquiry.';
+                    
+                    // Open email client
+                    window.location.href = 'mailto:prishant@proficient-professionals.com?subject=' + subject + '&body=' + body;
+                    
+                    // Reset form
+                    document.getElementById('contactForm').reset();
+                    
+                    return false;
+                }
+                </script>
+
                 <p style="text-align: center; margin-top: 2rem; color: var(--light-text); font-size: 0.9rem;">
                     We typically respond within 24 hours during business days
                 </p>
             </div>
+
 
             <!-- Contact Information -->
             <div class="contact-info">
