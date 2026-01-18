@@ -366,7 +366,6 @@ section {
 .service-detail .service-icon {
     width: 70px;
     height: 70px;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
     border-radius: 14px;
     display: flex;
     align-items: center;
